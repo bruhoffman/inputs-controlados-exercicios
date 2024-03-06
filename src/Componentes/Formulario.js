@@ -1,41 +1,55 @@
-import {
-  onChangePagamento,
-  onChangeNumeroCartao,
-  onChangeNome,
-  onChangeCvc,
-  onChangeValidade,
-} from "../Pagina/PaginaDoCartao";
-import { Form, Selection, Botao } from "./estiloDoFormulario";
+import { Form, Selection, Botao, Input } from "./estiloDoFormulario";
 
 //declare todo o componente formulário e seus inputs. Exporte o formulário.
 function Formulario(props) {
   return (
-    <Form>
+    <Form onSubmit={props.botaoAlerta}>
       <label>
-        <Selection required onChangePagamento={onChangePagamento}>
+        <Selection
+          required
+          value={props.pagamento}
+          onChange={props.onChangePagamento}
+        >
+          <option></option>
           <option>Crédito</option>
           <option>Débito</option>
         </Selection>
       </label>
       <label>
         Nome:
-        <input type="text" required onChangeNome={onChangeNome} />
+        <Input
+          type="text"
+          required
+          value={props.nome}
+          onChange={props.onChangeNome}
+        />
       </label>
       <label>
         Número do cartão:
-        <input
+        <Input
           type="text"
           required
-          onChangeNumeroCartao={onChangeNumeroCartao}
+          value={props.numeroCartao}
+          onChange={props.onChangeNumeroCartao}
         />
       </label>
       <label>
         Validade:
-        <input type="text" required onChangeValidade={onChangeValidade} />
+        <Input
+          type="text"
+          required
+          value={props.validade}
+          onChange={props.onChangeValidade}
+        />
       </label>
       <label>
         CVC:
-        <input type="text" required onChangeCvc={onChangeCvc} />
+        <Input
+          type="text"
+          required
+          value={props.cvc}
+          onChange={props.onChangeCvc}
+        />
       </label>
       <Botao>Cadastrar Cartão</Botao>
     </Form>

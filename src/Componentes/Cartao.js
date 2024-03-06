@@ -21,11 +21,11 @@ function Cartao(props) {
 
       <Nome>{props.nome}</Nome>
 
-      <CVC>cvc:{props.cvc}</CVC>
+      <CVC>cvc: {props.cvc}</CVC>
 
-      <FormaDePagamento> $ {props.pagamento}</FormaDePagamento>
+      <FormaDePagamento> {props.pagamento}</FormaDePagamento>
 
-      <Validade>validade: {props.validade}</Validade>
+      <Validade>Validade: {props.validade}</Validade>
 
       <LogoMasterCard
         id="logo-master"

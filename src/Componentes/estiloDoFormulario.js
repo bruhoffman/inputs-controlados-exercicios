@@ -10,6 +10,8 @@ export const Form = styled.form`
 export const Input = styled.input`
   width: 100%;
   padding: 8px;
+  border: 0px;
+  border-bottom: 1px solid black;
 `;
 export const Selection = styled.select`
   width: 100%;
@@ -17,5 +19,5 @@ export const Selection = styled.select`
 `;
 
 export const Botao = styled.button`
-  padding: 4px;
+  padding: 8px;
 `;

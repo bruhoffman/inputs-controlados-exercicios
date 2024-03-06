@@ -32,6 +32,16 @@ function PaginaDoCartao() {
     setValidade(event.target.value);
   };
 
+  const botaoAlerta = (event) => {
+    event.preventDefault();
+    alert("Seu cartão foi cadastrado com sucesso!");
+    setPagamento("");
+    setNome("");
+    setNumeroCartao("");
+    setValidade("");
+    setCvc("");
+  };
+
   return (
     <LayoutDaPagina>
       {/* Passe as variáveis de estado para o Cartão. Use Props. */}
@@ -46,11 +56,17 @@ function PaginaDoCartao() {
       {/* Chame o Componente Formulário Aqui */}
       {/* Passe a função de controle de input e variável de estado para o formulário. Para isso use Props */}
       <Formulario
+        pagamento={pagamento}
         onChangePagamento={onChangePagamento}
+        numeroCartao={numeroCartao}
         onChangeNumeroCartao={onChangeNumeroCartao}
+        nome={nome}
         onChangeNome={onChangeNome}
+        cvc={cvc}
         onChangeCvc={onChangeCvc}
+        validade={validade}
         onChangeValidade={onChangeValidade}
+        botaoAlerta={botaoAlerta}
       />
     </LayoutDaPagina>
   );
